@@ -11,6 +11,15 @@ def test_init():
     assert ada.level == level
     assert ada.courses == courses
 
+def test_courses_emptylist_or_none():
+    name = "Ada Lovelace"
+    level = "sophomore"
+    courses = []
+    ada = Student(name, level, courses)
+    assert ada.courses == []
+
+    
+
 def test_add_class():
     new_class = 'Intro to Feminism'
     charles = Student("Charles Babbage", "senior", ["mechanical engineering"])
@@ -40,5 +49,9 @@ def test_get_student_with_more_classes():
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
+    result1 = get_student_with_more_classes(ada, charles)
+    assert result1 == charles
+    result2 = get_student_with_more_classes(charles, ada)
+    assert result2 == ada
 
     # TODO: write assertions

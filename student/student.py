@@ -5,7 +5,7 @@ class Student:
         self.name = name
         self.level = level
         if not courses:
-            corses = []
+            courses = []
         self.courses = courses
 
     def add_class(self, course_name):

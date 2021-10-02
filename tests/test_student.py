@@ -49,9 +49,14 @@ def test_get_student_with_more_classes():
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
-    result1 = get_student_with_more_classes(ada, charles)
-    assert result1 == charles
-    result2 = get_student_with_more_classes(charles, ada)
-    assert result2 == ada
+    # result1 = get_student_with_more_classes(ada, charles)
+    # assert result1 == charles
+    # result2 = get_student_with_more_classes(charles, ada)
+    # assert result2 == ada
 
+    # assert charles if get_student_with_more_classes(ada, charles) else ada
+
+    # Ansel's way
+    for (a, b) in [(ada, charles), (charles, ada)]:
+        assert get_student_with_more_classes(a, b) == b
     # TODO: write assertions
